@@ -5,14 +5,14 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'ENTER_STORAGE_ACCOUNT_NAME'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'ENTER_BLOB_STORAGE_KEY'
-    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'ENTER_IMAGES_CONTAINER_NAME'
+    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'oz1blob'
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'i/aPKJrnJ9gKs8Tul0mvvaYp5ujdEwA8HM6C1KgA0mwyVJoV2ebgd2D2NkawfnZ/lK52Oz1w7DHlKWWtHwT5Bg=='
+    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'oz-images'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'ENTER_SQL_SERVER_NAME.database.windows.net'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'ENTER_SQL_DB_NAME'
-    SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'ENTER_SQL_SERVER_USERNAME'
-    SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'ENTER_SQL_SERVER_PASSWORD'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'oz-cms-server.database.windows.net'
+    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'cms-database'
+    SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'oz-admin'
+    SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Cms!password'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
     SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE  + '?driver=ODBC+Driver+17+for+SQL+Server'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
