@@ -71,7 +71,7 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
-        app.logger.info(user + 'logged in successfully')
+        app.logger.info('%s logged in successfully',user.username)
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
         return redirect(next_page)
